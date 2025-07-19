@@ -24,7 +24,7 @@ export class DatabaseFactory implements TypeOrmOptionsFactory {
       password,
       database: name,
       synchronize,
-      logging,
+      logging: false,
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
     };
 

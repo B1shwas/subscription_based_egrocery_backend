@@ -12,7 +12,7 @@ export interface DatabaseConfig {
   logging: boolean;
 }
 
-export default registerAs<DatabaseConfig>(databaseConfigName, () => ({
+export const databaseConfig = registerAs<DatabaseConfig>(databaseConfigName, () => ({
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT || '5432'),
   username: process.env.DB_USERNAME || 'postgres',

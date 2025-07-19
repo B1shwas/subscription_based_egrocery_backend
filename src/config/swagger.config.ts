@@ -7,7 +7,7 @@ export interface SwaggerConfig {
   password: string;
 }
 
-export default registerAs(swaggerConfigName, () => ({
+export const swaggerConfig = registerAs(swaggerConfigName, () => ({
   login: process.env.SWAGGER_LOGIN,
   password: process.env.SWAGGER_PW,
 }));
