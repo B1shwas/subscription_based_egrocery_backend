@@ -10,7 +10,7 @@ import { Repository } from 'typeorm';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     @Inject(tokenConfig.KEY)
-    private readonly config: ConfigType<typeof tokenConfig>,
+    config: ConfigType<typeof tokenConfig>,
     @InjectRepository(User) private readonly userRepo: Repository<User>,
   ) {
     super({

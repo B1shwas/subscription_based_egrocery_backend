@@ -19,6 +19,7 @@ import { databaseConfig, swaggerConfig, tokenConfig } from './config';
 import { HealthController } from './modules/health/health.controller';
 import { JwtAuthGuard } from './modules/auth/guards/jwt.guard';
 import { RolesGuard } from './modules/auth/guards/role.guard';
+import { AddressModule } from './modules/address/address.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { RolesGuard } from './modules/auth/guards/role.guard';
     UserModule,
     TerminusModule,
     AuthModule,
+    AddressModule,
   ],
   providers: [
     {

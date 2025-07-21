@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -57,8 +58,16 @@ export class UserService {
     return user;
   }
 
-  async updateUser(id: string, data: UpdateUserDto): Promise<User> {
+  async updateUser(
+    id: string,
+    data: UpdateUserDto,
+    userId: string,
+  ): Promise<User> {
     const user = await this.findUserById(id);
+
+    if (userId !== id) {
+      throw new ForbiddenException('You are not allowed to do this action');
+    }
 
     if (data.username || data.email) {
       const duplicate = await this.userRepo.findOne({

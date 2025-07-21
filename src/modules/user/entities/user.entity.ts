@@ -1,7 +1,8 @@
 import { BaseEntity } from 'src/common/entities/base.entity';
-import { BeforeInsert, BeforeUpdate, Column, Entity } from 'typeorm';
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
 import { USER_ROLE } from 'src/modules/auth/enum/role.enum';
+import { Address } from 'src/modules/address/entity/address.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -25,6 +26,9 @@ export class User extends BaseEntity {
 
   @Column({ nullable: true, length: 500 })
   profileImage?: string;
+
+  @OneToMany(() => Address, (address) => address.user)
+  addresses: Address[];
 
   @BeforeInsert()
   @BeforeUpdate()

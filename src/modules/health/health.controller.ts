@@ -5,6 +5,7 @@ import {
   HealthCheckService,
   TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
+import { Public } from 'src/common/decorators/public.decorator';
 
 @ApiTags('Health')
 @Controller('health')
@@ -14,6 +15,7 @@ export class HealthController {
     private readonly db: TypeOrmHealthIndicator,
   ) {}
 
+  @Public()
   @Get()
   @ApiOperation({ summary: 'Health check endpoint' })
   @ApiResponse({
