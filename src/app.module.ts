@@ -10,7 +10,7 @@ import { DatabaseFactory } from './database/database.factory';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ResponseInterceptor } from './common/interceptors';
 import { GlobalExceptionFilter } from './common/filters';
-import { SwaggerAuthMiddleware } from './swagger/swagger.middleware';
+import { SwaggerAuthMiddleware } from './documentation/swagger.middleware';
 import { UserModule } from './modules/user/user.module';
 import { TerminusModule } from '@nestjs/terminus';
 import { AuthModule } from './modules/auth/auth.module';

@@ -8,7 +8,7 @@ import {
   ApiInternalServerError,
   ApiNotFoundError,
   ApiOk,
-} from 'src/swagger/swagger.helper';
+} from 'src/documentation/swagger.helper';
 
 export function ApiAddAddress() {
   return applyDecorators(

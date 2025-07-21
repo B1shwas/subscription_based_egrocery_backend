@@ -4,7 +4,7 @@ import {
   ApiInternalServerError,
   ApiOk,
   ApiUnauthorized,
-} from 'src/swagger/swagger.helper';
+} from 'src/documentation/swagger.helper';
 
 export function ApiLogin() {
   return applyDecorators(
